@@ -1,3 +1,4 @@
+import { Trash } from 'phosphor-react'
 import { useContextSelector } from 'use-context-selector'
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
@@ -15,6 +16,10 @@ export function Transactions() {
   const transactions = useContextSelector(TransactionContext, (context) => {
     return context.transactions
   })
+
+  function handleTrashItem() {
+    return console.log(transactions)
+  }
 
   return (
     <div>
@@ -39,6 +44,11 @@ export function Transactions() {
                   <td>{transactions.category}</td>
                   <td>
                     {dateFormatter.format(new Date(transactions.createdAt))}
+                  </td>
+                  <td>
+                    <button className="trash" onClick={handleTrashItem}>
+                      <Trash size={20} weight="fill" />
+                    </button>
                   </td>
                 </tr>
               )

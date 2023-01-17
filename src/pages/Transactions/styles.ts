@@ -27,6 +27,24 @@ export const TransacitonsTable = styled.table`
       border-bottom-right-radius: 6px;
     }
   }
+
+  .trash {
+    cursor: pointer;
+    color: ${(props) => props.theme.white};
+    background: transparent;
+    border: 0;
+    line-height: 0;
+
+    :focus {
+      outline: 0;
+      box-shadow: 0 0 0 0;
+    }
+
+    &:hover {
+      transition: color 0.2s;
+      color: ${(props) => props.theme['red-300']};
+    }
+  }
 `
 
 interface PriceHighLightProps {
